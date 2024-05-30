@@ -14,6 +14,12 @@ Install dependencies:
 ansible-galaxy install -r requirements.yml
 ```
 
+Run one of the available playbooks:
+
+```sh
+ansible-playbook -i inventory.yml -K playbook.yml
+```
+
 ## Credits
 
 * https://github.com/geerlingguy/ansible-collection-mac

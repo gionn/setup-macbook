@@ -2,6 +2,7 @@
 all:
   hosts:
     macos_host:
-      ansible_connection: ssh
-      ansible_host: 192.168.1.18
+      ansible_connection: local
+      # ansible_connection: ssh
+      # ansible_host: 192.168.1.xx
       ansible_python_interpreter: /usr/bin/python3
