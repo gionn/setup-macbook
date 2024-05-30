@@ -22,6 +22,7 @@
       - coreutils
       - detect-secrets
       - direnv
+      - docker
       - eksctl
       - flux
       - git
