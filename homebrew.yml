@@ -1,0 +1,66 @@
+---
+- name: Setup Homebrew
+  hosts: macos_host
+  gather_facts: true
+  vars:
+    homebrew_cask_apps:
+      - iterm2
+      - karabiner-elements
+      - maccy
+      - mos
+      - ollama
+      - podman-desktop
+      - slack
+      - telegram-desktop
+      - visual-studio-code
+    homebrew_taps:
+      - robscott/tap
+      - updatecli/updatecli
+    homebrew_installed_packages:
+      - awscli
+      - chart-testing
+      - checkov
+      - coreutils
+      - detect-secrets
+      - direnv
+      - eksctl
+      - flux
+      - git
+      - git-delete-merged-branches
+      - gnu-sed
+      - grep
+      - grype
+      - helm-docs
+      - htop
+      - httpie
+      - jq
+      - k9s
+      - kind
+      - kube-capacity
+      - kubeconform
+      - kubectx
+      - kubernetes-cli
+      - kustomize
+      - maven
+      - node
+      - nvm
+      - openjdk
+      - openjdk@11
+      - openjdk@17
+      - podman
+      - pyenv
+      - python
+      - rbenv
+      - ruby-build
+      - shellcheck
+      - skopeo
+      - tfenv
+      - tflint
+      - tfsec
+      - updatecli
+      - wget
+      - yamllint
+      - yq
+    # homebrew_uninstalled_packages: []
+  roles:
+    - geerlingguy.mac.homebrew

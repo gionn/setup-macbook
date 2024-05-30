@@ -1,0 +1,25 @@
+---
+- name: Setup zsh
+  hosts: macos_host
+  gather_facts: true
+  vars:
+    user_dir: "{{ ansible_env.HOME }}"
+  tasks:
+    - name: Install prezto
+      block:
+        - name: Checkout prezto repo from github
+          ansible.builtin.git:
+            repo: https://github.com/sorin-ionescu/prezto.git
+            version: f5a8cb456b74d4d71caf46037a356d2deee27b50
+            dest: "{{ user_dir }}/.zprezto/"
+            track_submodules: true
+            force: true
+            update: false
+
+        - name: Link prezto runcoms
+          ansible.builtin.file:
+            src: "{{ item }}"
+            dest: "{{ user_dir }}/.{{ item | basename }}"
+            state: link
+          with_fileglob: "{{ user_dir }}/.zprezto/runcoms/*"
+          when: item | basename != "README.md"
