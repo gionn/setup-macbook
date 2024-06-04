@@ -65,3 +65,14 @@
     # homebrew_uninstalled_packages: []
   roles:
     - geerlingguy.mac.homebrew
+  post_tasks:
+    - name: Create symbolic link for java wrapper to work
+      ansible.builtin.file:
+        src: /opt/homebrew/opt/openjdk@{{ item }}/libexec/openjdk.jdk
+        dest: /Library/Java/JavaVirtualMachines/openjdk-{{ item }}.jdk
+        state: link
+      become: true
+      loop:
+        - 11
+        - 17
+        - 21
