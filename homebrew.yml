@@ -54,6 +54,7 @@
       - ruby-build
       - shellcheck
       - skopeo
+      - terraform-docs
       - tfenv
       - tflint
       - tfsec
