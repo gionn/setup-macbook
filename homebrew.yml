@@ -30,6 +30,7 @@
       - gnu-sed
       - grep
       - grype
+      - helm
       - helm-docs
       - htop
       - httpie
