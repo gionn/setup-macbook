@@ -25,6 +25,7 @@
       - docker
       - eksctl
       - flux
+      - gh
       - git
       - git-delete-merged-branches
       - gnu-sed
