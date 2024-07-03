@@ -50,6 +50,7 @@
       - openjdk@11
       - openjdk@17
       - podman
+      - podman-compose
       - pyenv
       - python
       - rbenv
